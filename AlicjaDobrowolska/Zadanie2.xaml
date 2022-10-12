@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlicjaDobrowolska"
         mc:Ignorable="d"
-        Title="Zadanie2" Height="240" Width="600">
+        Title="Zadanie2" Height="260" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -22,6 +22,7 @@
             <TextBox Foreground="Black" FontSize="25" Height="50"/>
             <TextBox Foreground="Black" FontSize="25" Height="50"/>
             <TextBox Foreground="Black" FontSize="25" Height="50"/>
+            <Button Grid.ColumnSpan="1" FontSize="15" Height="30">Dodaj studenta</Button>
         </StackPanel>
     </Grid>
 </Window>
