@@ -1,0 +1,18 @@
+﻿<Window x:Class="AlicjaDobrowolska.Zadanie4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlicjaDobrowolska"
+        mc:Ignorable="d"
+        Title="Zadanie4" Height="350" Width="600">
+    <Canvas>
+        <Button Canvas.Left="50" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
+        <Button Canvas.Left="180" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
+        <Button Canvas.Right="50" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
+        <Button Canvas.Right="180" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
+        <Button Canvas.Left="115" Canvas.Top="130" Height="50" Width="100" FontSize="16">Poziom 2</Button>
+        <Button Canvas.Right="115" Canvas.Top="130" Height="50" Width="100" FontSize="16">Poziom 2</Button>
+        <Button Canvas.Left="240" Canvas.Top="230" Height="50" Width="100" FontSize="16">Poziom 3</Button>
+    </Canvas>
+</Window>
