@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlicjaDobrowolska"
         mc:Ignorable="d"
-        Title="MainWindow" Height="385" Width="310">
+        Title="MainWindow" Height="385" Width="310" FontSize="25">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -25,9 +25,9 @@
 
 
 
-        <TextBox Grid.ColumnSpan="5" Grid.Row="0" Height="50">0000</TextBox>
-
-        <Button Grid.Column="0" Grid.Row="1">1</Button>
+        <TextBox Grid.ColumnSpan="3" Grid.Row="0" Height="50" TextChanged="TextBox_TextChanged">0000</TextBox>
+        <Button Grid.Column="4" Grid.Row="0">C</Button>
+        <Button Tag="1" Grid.Column="0" Grid.Row="1">1</Button>
         <Button Grid.Column="1" Grid.Row="1">2</Button>
         <Button Grid.Column="2" Grid.Row="1">3</Button>
         <Button Grid.Column="3" Grid.Row="1">+</Button>

@@ -24,5 +24,11 @@ namespace AlicjaDobrowolska
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Button Btn = (Button)sender;
+            TextBox = Btn.Tag.ToString();
+        }
     }
 }
