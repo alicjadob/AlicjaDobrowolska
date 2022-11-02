@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Zadanie4" Height="350" Width="600">
     <Canvas>
-        <Button Canvas.Left="50" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
-        <Button Canvas.Left="180" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
-        <Button Canvas.Right="50" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
-        <Button Canvas.Right="180" Canvas.Top="30" Height="50" Width="100" FontSize="16">Poziom 1</Button>
-        <Button Canvas.Left="115" Canvas.Top="130" Height="50" Width="100" FontSize="16">Poziom 2</Button>
-        <Button Canvas.Right="115" Canvas.Top="130" Height="50" Width="100" FontSize="16">Poziom 2</Button>
-        <Button Canvas.Left="240" Canvas.Top="230" Height="50" Width="100" FontSize="16">Poziom 3</Button>
+        <Button Canvas.Left="50" Canvas.Top="30" Height="50" Width="100" FontSize="16" Content="Poziom 1"/>
+        <Button Canvas.Left="180" Canvas.Top="30" Height="50" Width="100" FontSize="16" Content="Poziom 1"/>
+        <Button Canvas.Right="50" Canvas.Top="30" Height="50" Width="100" FontSize="16" Content="Poziom 1"/>
+        <Button Canvas.Right="180" Canvas.Top="30" Height="50" Width="100" FontSize="16" Content="Poziom 1"/>
+        <Button Canvas.Left="115" Canvas.Top="130" Height="50" Width="100" FontSize="16" Content="Poziom 2"/>
+        <Button Canvas.Right="115" Canvas.Top="130" Height="50" Width="100" FontSize="16" Content="Poziom 2"/>
+        <Button Canvas.Left="240" Canvas.Top="230" Height="50" Width="100" FontSize="16" Content="Poziom 3"/>
     </Canvas>
 </Window>

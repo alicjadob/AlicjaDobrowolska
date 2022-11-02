@@ -12,17 +12,17 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <Label Foreground="Black" FontSize="25" Height="50">Imie</Label>
-            <Label Foreground="Black" FontSize="25" Height="50">Nazwisko</Label>
-            <Label Foreground="Black" FontSize="25" Height="50">Data urodzenia</Label>
-            <Label Foreground="Black" FontSize="25" Height="50">Semestr</Label>
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Imie"/>
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Nazwisko"/>
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Data urodzenia"/>
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Semestr"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBox Foreground="Black" FontSize="25" Height="50"/>
             <TextBox Foreground="Black" FontSize="25" Height="50"/>
             <TextBox Foreground="Black" FontSize="25" Height="50"/>
             <TextBox Foreground="Black" FontSize="25" Height="50"/>
-            <Button Grid.ColumnSpan="1" FontSize="15" Height="30">Dodaj studenta</Button>
+            <Button Grid.ColumnSpan="1" FontSize="15" Height="30" Content="Dodaj studenta"/>
         </StackPanel>
     </Grid>
 </Window>
