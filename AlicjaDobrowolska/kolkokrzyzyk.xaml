@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlicjaDobrowolska"
         mc:Ignorable="d"
-        Title="kolkokrzyzyk" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="450" Width="400" Background="#A874D5">
+    <Border BorderBrush="#8700FF"
+                BorderThickness="7">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="33*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*" />
+                <ColumnDefinition Width="33*" />
+                <ColumnDefinition Width="33*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="BorderThickness" Value="2"/>
+                    <Setter Property="BorderBrush" Value="#8700FF" />
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="Background" Value="#CDDFFA"/>
+                </Style>
+
+                <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+
+            </Grid.Resources>
+
+            <Button x:Name="TopXLeft" Grid.Row="0" Grid.Column="0" Click="Button_Click"/>
+            <Button x:Name="TopXMiddle" Grid.Row="0" Grid.Column="1" Click="Button_Click"/>
+            <Button x:Name="TopXRight" Grid.Row="0" Grid.Column="2" Click="Button_Click"/>
+            <Button x:Name="CenterXLeft" Grid.Row="1" Grid.Column="0" Click="Button_Click"/>
+            <Button x:Name="CenterXMiddle" Grid.Row="1" Grid.Column="1" Click="Button_Click"/>
+            <Button x:Name="CenterXRight" Grid.Row="1" Grid.Column="2" Click="Button_Click"/>
+            <Button x:Name="BottomXLeft" Grid.Row="2" Grid.Column="0" Click="Button_Click" />
+            <Button x:Name="BottomXMiddle" Grid.Row="2" Grid.Column="1" Click="Button_Click" />
+            <Button x:Name="BottomXRight" Grid.Row="2" Grid.Column="2" Click="Button_Click"/>
+            <Button x:Name="Restart" Grid.Row="3" Grid.Column="1" Margin="10,20,10,20" Click="Button_Restart" Content="RESTART" FontSize="20"/>
+
     </Grid>
+    </Border>
 </Window>

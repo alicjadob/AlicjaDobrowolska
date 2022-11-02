@@ -23,5 +23,18 @@ namespace AlicjaDobrowolska
         {
             InitializeComponent();
         }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var space = (Button)sender;
+            if (!String.IsNullOrWhiteSpace(space.Content?.ToString())) return;
+        }
+
+
+        private void Button_Restart(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
