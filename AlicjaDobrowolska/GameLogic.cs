@@ -9,12 +9,10 @@ namespace AlicjaDobrowolska
 {
     public class GameLogic
     {
-
         public string CurrentPlayer { get; set; } = X;
         private const string X = "X";
         private const string O = "O";
         private string[,] Board = new string[3, 3];
-
         public void SetNextPlayer()
         {
             if (CurrentPlayer == X)
@@ -26,7 +24,6 @@ namespace AlicjaDobrowolska
                 CurrentPlayer = X;
             }
         }
-
         public bool PlayerWin()
         {
             for(var i=0 ; i<3 ; i++)
@@ -52,8 +49,6 @@ namespace AlicjaDobrowolska
 
                 }
             }
-
-            
                 if (!String.IsNullOrWhiteSpace(Board[1, 1]))
                 {
                     if (Board[0, 0] == Board[1, 1] && Board[1, 1] == Board[2, 2])
@@ -65,12 +60,9 @@ namespace AlicjaDobrowolska
                     {
                         return true;
                     }
-            }
-            
-
+                }
             return false;
         }
-
         internal void UpdateBoard(Position position, string value)
         {
             Board[position.x, position.y] = value;

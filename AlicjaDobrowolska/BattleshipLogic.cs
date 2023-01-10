@@ -6,7 +6,6 @@ namespace AlicjaDobrowolska
     public class BattleshipLogic : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
         ObservableCollection<int> _PersonIdOne = new ObservableCollection<int>
         { };
         ObservableCollection<int> _PersonIdTwo = new ObservableCollection<int>
