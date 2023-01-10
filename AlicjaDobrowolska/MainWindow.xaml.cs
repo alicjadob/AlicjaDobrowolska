@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,12 +25,23 @@ namespace AlicjaDobrowolska
         public MainWindow()
         {
             InitializeComponent();
-            listOfMovies.Add(new Movies("one", "xxxx"));
-            listOfMovies.Add(new Movies("two", "yyyy"));
-            listOfMovies.Add(new Movies("three", "zzzz"));
+            if (File.Exists("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml"))
+            {
+                listOfMovies = Serializacja.DeserializeToObject<List<Movies>>("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
+            }
+            else
+            {
+                listOfMovies.Add(new Movies("Title", "Type"));
+                listOfMovies.Add(new Movies("Title", "Type"));
+                listOfMovies.Add(new Movies("Title", "Type"));
+                listOfMovies.Add(new Movies("Title", "Type"));
+            }
             dataGridMovies.ItemsSource = listOfMovies;
         }
-
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Serializacja.SerializeToXml<List<Movies>>(listOfMovies, "C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
+        }
         private void Button_Add(object sender, RoutedEventArgs e)
         {
             Window1 okno = new Window1();
