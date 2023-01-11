@@ -24,7 +24,7 @@ namespace webapi.Controllers
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
-        {
+        { 
            _test.MetodaTestowa();
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
