@@ -17,7 +17,7 @@ namespace webapi.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ITest test, ILogger<WeatherForecastController> logger)
-        {
+        { 
             _test = test;
             _logger = logger;
         }
