@@ -4,11 +4,11 @@
 namespace AlicjaDobrowolska
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Zadanie4.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Zadanie4 : Window
     {
-        public MainWindow()
+        public Zadanie4()
         {
             InitializeComponent();
         }

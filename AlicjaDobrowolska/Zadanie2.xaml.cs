@@ -1,14 +1,13 @@
 ﻿using System.Windows;
 
-
 namespace AlicjaDobrowolska
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Zadanie2.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Zadanie2 : Window
     {
-        public MainWindow()
+        public Zadanie2()
         {
             InitializeComponent();
         }

@@ -1,0 +1,28 @@
+﻿<Window x:Class="AlicjaDobrowolska.Zadanie2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlicjaDobrowolska"
+        mc:Ignorable="d"
+        Title="Zadanie2" Height="260" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Imie"/>
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Nazwisko"/>
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Data urodzenia"/>
+            <Label Foreground="Black" FontSize="25" Height="50" Content="Semestr"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Foreground="Black" FontSize="25" Height="50"/>
+            <TextBox Foreground="Black" FontSize="25" Height="50"/>
+            <TextBox Foreground="Black" FontSize="25" Height="50"/>
+            <TextBox Foreground="Black" FontSize="25" Height="50"/>
+            <Button Grid.ColumnSpan="1" FontSize="15" Height="30" Content="Dodaj studenta"/>
+        </StackPanel>
+    </Grid>
+</Window>
