@@ -159,8 +159,10 @@ namespace AlicjaDobrowolska
                 return 0;
             }
         }
+
         public class YesNoToBooleanConverter2 : IValueConverter
         {
+
             public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             {
                 switch (value)
@@ -176,6 +178,7 @@ namespace AlicjaDobrowolska
                 }
                 return false;
             }
+
             public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             {
                 if (value is Colors)

@@ -34,7 +34,6 @@ namespace AlicjaDobrowolska
                     {
                         return true;
                     }
-
                 }
             }
 
@@ -61,8 +60,10 @@ namespace AlicjaDobrowolska
                         return true;
                     }
                 }
+
             return false;
         }
+
         internal void UpdateBoard(Position position, string value)
         {
             Board[position.x, position.y] = value;

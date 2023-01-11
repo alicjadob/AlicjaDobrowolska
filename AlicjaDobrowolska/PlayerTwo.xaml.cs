@@ -24,6 +24,7 @@ namespace AlicjaDobrowolska
         BattleshipLogic gra = new BattleshipLogic(tab, tab2);
         public int setCounter = 0;
         public int shootsHit = 0;
+
         void setButton_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
@@ -42,6 +43,7 @@ namespace AlicjaDobrowolska
                 counter.Content = 20 - setCounter;
             }
         }
+
         void shootButton_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
@@ -94,7 +96,7 @@ namespace AlicjaDobrowolska
                             }
                         }
                         break;
-                    //stawianie  
+                  
                     case 1:
                         for (int i = 1; i < 11; i++)
                         {
