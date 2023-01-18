@@ -24,14 +24,16 @@ namespace AlicjaDobrowolska
         {
             InitializeComponent();
         }
-        private void Button_Edytuj(object sender, RoutedEventArgs e)
-        {
-            IsEditPressed = true;
-            this.Close();
-        }
+       
         private void Button_Anuluj(object sender, RoutedEventArgs e)
         {
             IsEditPressed = false;
+            this.Close();
+        }
+
+        private void Button_Edit(object sender, RoutedEventArgs e)
+        {
+            IsEditPressed = true;
             this.Close();
         }
     }

@@ -24,9 +24,9 @@
         <TextBox Text="ZNIŻKA:" Grid.Row="1" Background="CornflowerBlue" Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox Text="MIEJSCE:" Grid.Row="2" Background="CornflowerBlue" Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox Grid.Column="1" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding title, Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="1" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding type, Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="2" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding type, Mode=TwoWay}"></TextBox>
-        <Button Content="EDYTUJ" Grid.Row="4" Click="Button_Edytuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding discount, Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="1" Grid.Row="2" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding seat, Mode=TwoWay}"></TextBox>
+        <Button Content="EDYTUJ" Grid.Row="4" Click="Button_Edit" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
         <Button Content="ANULULJ" Grid.Row="4" Grid.Column="1" Click="Button_Anuluj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
     </Grid>
 </Window>

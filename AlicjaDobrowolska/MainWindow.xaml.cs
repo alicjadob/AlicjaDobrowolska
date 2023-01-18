@@ -21,31 +21,31 @@ namespace AlicjaDobrowolska
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Kino> listOfMovies = new List<Kino>();
+        List<Movies> listOfMovies = new List<Movies>();
         public MainWindow()
         {
             InitializeComponent();
             if (File.Exists("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml"))
             {
-                listOfMovies = Serializacja.DeserializeToObject<List<Kino>>("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
+                listOfMovies = Serializacja.DeserializeToObject<List<Movies>>("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
             }
             else
             {
-                listOfMovies.Add(new Kino("Title", "Discount", 1));
-                listOfMovies.Add(new Kino("Title", "Discount", 2));
-                listOfMovies.Add(new Kino("Title", "Discount", 3));
-                listOfMovies.Add(new Kino("Title", "Discount", 4));
+                listOfMovies.Add(new Movies("Title", "Discount", "1"));
+                listOfMovies.Add(new Movies("Title", "Discount", "2"));
+                listOfMovies.Add(new Movies("Title", "Discount", "3"));
+                listOfMovies.Add(new Movies("Title", "Discount", "4"));
             }
             dataGridMovies.ItemsSource = listOfMovies;
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Serializacja.SerializeToXml<List<Kino>>(listOfMovies, "C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
+            Serializacja.SerializeToXml<List<Movies>>(listOfMovies, "C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
         }
         private void Button_Zamow(object sender, RoutedEventArgs e)
         {
             Window1 okno = new Window1();
-            Kino filmy = new Kino();
+            Movies filmy = new Movies();
             okno.DataContext = filmy;
             okno.ShowDialog();
             if (okno.IsEditPressed)
@@ -60,12 +60,12 @@ namespace AlicjaDobrowolska
             if (dataGridMovies.SelectedItem != null)
             {
                 Window1 okno = new Window1();
-                Kino filmy = new Kino((Kino)dataGridMovies.SelectedItem);
+                Movies filmy = new Movies((Movies)dataGridMovies.SelectedItem);
                 okno.DataContext = filmy;
                 okno.ShowDialog();
                 if (okno.IsEditPressed)
                 {
-                    int index = listOfMovies.IndexOf((Kino)dataGridMovies.SelectedItem);
+                    int index = listOfMovies.IndexOf((Movies)dataGridMovies.SelectedItem);
                     listOfMovies[index] = filmy;
                     dataGridMovies.Items.Refresh();
                 }
