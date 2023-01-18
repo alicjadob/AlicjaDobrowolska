@@ -7,41 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="365" Width="300">
     <Grid>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-        </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="75"/>
-            <ColumnDefinition Width="75"/>
-            <ColumnDefinition Width="75"/>
-            <ColumnDefinition Width="75"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="5">
-            <TextBox Height="50"></TextBox>
-        </StackPanel>
-
-        <Button Grid.Column="0" Grid.Row="1">1</Button>
-        <Button Grid.Column="1" Grid.Row="1">2</Button>
-        <Button Grid.Column="2" Grid.Row="1">3</Button>
-        <Button Grid.Column="3" Grid.Row="1">*</Button>
-
-        <Button Grid.Column="0" Grid.Row="2">4</Button>
-        <Button Grid.Column="1" Grid.Row="2">5</Button>
-        <Button Grid.Column="2" Grid.Row="2">6</Button>
-        <Button Grid.Column="3" Grid.Row="2">/</Button>
-
-        <Button Grid.Column="0" Grid.Row="3">7</Button>
-        <Button Grid.Column="1" Grid.Row="3">8</Button>
-        <Button Grid.Column="2" Grid.Row="3">9</Button>
-        <Button Grid.Column="3" Grid.Row="3">+</Button>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="KINO" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
+        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+        </DataGrid>
+        <Button Click="Button_Zamow" Grid.Column="0" Grid.Row="4" Content="Zamów" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
+        <Button Grid.Column="1" Grid.Row="4" Click="Button_Wlasciwosci" Content="Edytuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
     </Grid>
 </Window>
