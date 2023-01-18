@@ -26,7 +26,7 @@
         <TextBox Grid.Column="1" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding title, Mode=TwoWay}"></TextBox>
         <TextBox Grid.Column="1" Grid.Row="1" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding type, Mode=TwoWay}"></TextBox>
         <TextBox Grid.Column="1" Grid.Row="2" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding type, Mode=TwoWay}"></TextBox>
-        <Button Content="EDYTUJ" Grid.Row="4" Click="Button_Wlasciwosci" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
+        <Button Content="EDYTUJ" Grid.Row="4" Click="Button_Edytuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
         <Button Content="ANULULJ" Grid.Row="4" Grid.Column="1" Click="Button_Anuluj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
     </Grid>
 </Window>

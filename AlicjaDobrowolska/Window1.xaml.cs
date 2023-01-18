@@ -24,7 +24,7 @@ namespace AlicjaDobrowolska
         {
             InitializeComponent();
         }
-        private void Button_Wlasciwosci(object sender, RoutedEventArgs e)
+        private void Button_Edytuj(object sender, RoutedEventArgs e)
         {
             IsEditPressed = true;
             this.Close();
