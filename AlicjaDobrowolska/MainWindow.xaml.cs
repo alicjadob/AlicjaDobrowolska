@@ -31,10 +31,10 @@ namespace AlicjaDobrowolska
             }
             else
             {
-                listOfMovies.Add(new Kino("Title", "Type"));
-                listOfMovies.Add(new Kino("Title", "Type"));
-                listOfMovies.Add(new Kino("Title", "Type"));
-                listOfMovies.Add(new Kino("Title", "Type"));
+                listOfMovies.Add(new Kino("Title", "Type", "Seat"));
+                listOfMovies.Add(new Kino("Title", "Type", "Seat"));
+                listOfMovies.Add(new Kino("Title", "Type", "Seat"));
+                listOfMovies.Add(new Kino("Title", "Type", "Seat"));
             }
             dataGridMovies.ItemsSource = listOfMovies;
         }

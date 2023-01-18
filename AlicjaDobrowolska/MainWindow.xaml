@@ -18,7 +18,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="KINO" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
+        <TextBlock Text="ZAMÓW BILETY" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
         <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
         </DataGrid>
         <Button Click="Button_Zamow" Grid.Column="0" Grid.Row="4" Content="Zamów" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
