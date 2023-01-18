@@ -18,8 +18,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="2" Background="CornflowerBlue"/>
         <TextBlock Text="ZAMÓW BILETY" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
-        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" FontSize="20">
         </DataGrid>
         <Button Click="Button_Zamow" Grid.Column="0" Grid.Row="4" Content="Zamów" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
         <Button Grid.Column="1" Grid.Row="4" Click="Button_Wlasciwosci" Content="Edytuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>

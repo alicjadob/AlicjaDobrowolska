@@ -10,28 +10,28 @@ namespace AlicjaDobrowolska
     [XmlRoot(ElementName = "filmy")]
     public class Kino
     {
-        [XmlAttribute("title")]
-        public string title { get; set; }
-        [XmlAttribute("discount")]
-        public string discount { get; set; }
-        [XmlAttribute("seat")]
-        public string seat { get; set; }
+        [XmlAttribute("Tytuł")]
+        public string TYTUŁ { get; set; }
+        [XmlAttribute("ZNIŻKA")]
+        public string ZNIŻKA { get; set; }
+        [XmlAttribute("Miejsce")]
+        public int MIEJSCE { get; set; }
 
         public Kino()
         {
 
         }
-        public Kino(string title, string type)
+        public Kino(string title, string type, int seat)
         {
-            this.title = title;
-            this.discount = type;
-            this.seat = seat;
+            this.TYTUŁ = title;
+            this.ZNIŻKA = type;
+            this.MIEJSCE = seat;
         }
         public Kino(Kino filmy)
         {
-            this.title = filmy.title;
-            this.discount = filmy.discount;
-            this.seat = seat;
+            this.TYTUŁ = filmy.TYTUŁ;
+            this.ZNIŻKA = filmy.ZNIŻKA;
+            this.MIEJSCE = MIEJSCE;
         }
     }
 }
