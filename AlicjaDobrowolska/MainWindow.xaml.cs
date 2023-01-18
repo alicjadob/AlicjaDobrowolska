@@ -60,12 +60,12 @@ namespace AlicjaDobrowolska
             if (dataGridMovies.SelectedItem != null)
             {
                 Window1 okno = new Window1();
-                Kino filmy = new Kino((Movies)dataGridMovies.SelectedItem);
+                Kino filmy = new Kino((Kino)dataGridMovies.SelectedItem);
                 okno.DataContext = filmy;
                 okno.ShowDialog();
                 if (okno.IsEditPressed)
                 {
-                    int index = listOfMovies.IndexOf((Movies)dataGridMovies.SelectedItem);
+                    int index = listOfMovies.IndexOf((Kino)dataGridMovies.SelectedItem);
                     listOfMovies[index] = filmy;
                     dataGridMovies.Items.Refresh();
                 }
