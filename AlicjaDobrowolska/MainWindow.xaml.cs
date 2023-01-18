@@ -42,7 +42,7 @@ namespace AlicjaDobrowolska
         {
             Serializacja.SerializeToXml<List<Movies>>(listOfMovies, "C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
         }
-        private void Button_Zamow(object sender, RoutedEventArgs e)
+        private void Button_Dodaj(object sender, RoutedEventArgs e)
         {
             Window1 okno = new Window1();
             Movies filmy = new Movies();
