@@ -44,20 +44,46 @@ namespace AlicjaDobrowolska
             //}
             //dataGridMovies.ItemsSource = listOfMovies;
         }
+        SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Serializacja.SerializeToXml<List<Movies>>(listOfMovies, "C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
         }
+        public bool IsValid()
+        {
+            if (title_txt.Text == string.Empty || discount_txt.Text == string.Empty || seat_txt.Text == string.Empty)
+            {
+                MessageBox.Show("Wypełnij wszystkie dane", "Błąd zamówienia", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            return true;
+        }
         private void Button_Dodaj(object sender, RoutedEventArgs e)
         {
-            Window1 okno = new Window1();
-            Movies filmy = new Movies();
-            okno.DataContext = filmy;
-            okno.ShowDialog();
-            if (okno.IsEditPressed)
+            try
             {
-                listOfMovies.Add(filmy);
-                dataGridMovies.Items.Refresh();
+                if (IsValid())
+                {
+                    // insert
+                    
+                    SqlCommand command2;
+                    String sql2 = "Insert into Cinemat values(@title, @discount, @seat)";
+                    command2 = new SqlCommand(sql2, cnn);
+                    command2.CommandType = CommandType.Text;
+                    command2.Parameters.AddWithValue("@title", title_txt.Text);
+                    command2.Parameters.AddWithValue("@discount", discount_txt.Text);
+                    command2.Parameters.AddWithValue("@seat", seat_txt.Text);
+                    cnn.Open();
+                    command2.ExecuteNonQuery();
+                    cnn.Close();
+                    pokaz();
+                    //adapter.InsertCommand = new SqlCommand(sql2, cnn);
+                    //adapter.InsertCommand.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -81,24 +107,16 @@ namespace AlicjaDobrowolska
         public void pokaz()
         {
             //wyswietlanie
-            string connetionString;
-            SqlConnection cnn;
-            connetionString = @"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
+            
 
-            SqlCommand command;
-            SqlDataReader dataReader;
+            SqlCommand command = new SqlCommand("select @title, @discount, @seat from Cinemat", cnn);
             DataTable db = new DataTable();
-            String sql, Output = "";
-            sql = "Select * from Cinemat";
-            command = new SqlCommand(sql, cnn);
-            dataReader = command.ExecuteReader();
-            db.Load(dataReader);
+            cnn.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            db.Load(reader);
             cnn.Close();
             dataGridMovies.ItemsSource = db.DefaultView;
-            dataReader.Close();
-            command.Dispose();
         }
 
         private void Button_Connect(object sender, RoutedEventArgs e)

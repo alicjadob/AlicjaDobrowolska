@@ -53,8 +53,8 @@ namespace AlicjaDobrowolska
 
         private void Button_Insert(object sender, RoutedEventArgs e)
         {
-            try()
-                {
+            try
+            {
                 if (IsValid())
                 {
                     // insert
@@ -72,14 +72,17 @@ namespace AlicjaDobrowolska
                     cnn.Open();
                     MainWindow pokaz = new MainWindow();
                     pokaz.pokaz();
+                    IsEditPressed = true;
+                    this.Close();
                     //adapter.InsertCommand = new SqlCommand(sql2, cnn);
                     //adapter.InsertCommand.ExecuteNonQuery();
                 }
             }
-            catch()
-                {
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
+
         }
     }
 }
