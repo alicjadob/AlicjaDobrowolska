@@ -28,16 +28,19 @@
         <TextBlock Grid.Row="1" Background="CornflowerBlue" Grid.ColumnSpan="2" />
         <TextBlock Grid.Row="2" Grid.ColumnSpan="2"  Background="CornflowerBlue"/>
         <TextBlock Grid.Row="3" Grid.ColumnSpan="2"  Background="CornflowerBlue"/>
+        <TextBlock Grid.Row="5" Grid.ColumnSpan="5"  Background="CornflowerBlue"/>
         <TextBlock Text="TYTUŁ:" Grid.Row="1" Grid.ColumnSpan="2"  Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox Text="ZNIŻKA:" Grid.Row="2" Grid.ColumnSpan="2"  Background="CornflowerBlue" Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox Text="MIEJSCE:" Grid.Row="3" Grid.ColumnSpan="2"  Background="CornflowerBlue" Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="title_txt" Grid.Row="1" Grid.Column="2" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding title, Mode=TwoWay}"></TextBox>
         <TextBox x:Name="discount_txt" Grid.Column="2" Grid.Row="2" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding discount, Mode=TwoWay}"></TextBox>
         <TextBox x:Name="seat_txt" Grid.Column="2" Grid.Row="3" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding seat, Mode=TwoWay}"></TextBox>
+        <TextBox Text="ID:" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Background="CornflowerBlue" Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="search_txt" Grid.Row="5" Grid.Column="5" Background="DarkSlateBlue" Foreground="AliceBlue" Text="{Binding title, Mode=TwoWay}"></TextBox>
         <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" Grid.RowSpan="4" Grid.ColumnSpan="3" FontSize="20"/>
         <Button Click="Button_Dodaj" Grid.Column="0" Grid.Row="5" Content="Dodaj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
-        <Button Grid.Column="1" Grid.Row="5" Click="Button_Wlasciwosci" Content="Edytuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
-        <Button Grid.Column="2" Grid.Row="5" Click="Button_Connect" Content="Połącz" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
-        <Button Click="Button_Usun" Grid.Column="3" Grid.Row="5" Content="Usuń" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
+        
+        <Button Grid.Column="1" Grid.Row="5" Click="Button_update" Content="Aktualizuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
+        <Button Click="Button_Usun" Grid.Column="2" Grid.Row="5" Content="Usuń" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
     </Grid>
 </Window>

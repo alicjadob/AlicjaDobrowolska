@@ -31,18 +31,6 @@ namespace AlicjaDobrowolska
         {
             InitializeComponent();
             pokaz();
-            //if (File.Exists("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml"))
-            //{
-            //    listOfMovies = Serializacja.DeserializeToObject<List<Movies>>("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
-            //}
-            //else
-            //{
-            //    listOfMovies.Add(new Movies("Title", "Discount", "1"));
-            //    listOfMovies.Add(new Movies("Title", "Discount", "2"));
-            //    listOfMovies.Add(new Movies("Title", "Discount", "3"));
-            //    listOfMovies.Add(new Movies("Title", "Discount", "4"));
-            //}
-            //dataGridMovies.ItemsSource = listOfMovies;
         }
         SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -64,11 +52,7 @@ namespace AlicjaDobrowolska
             {
                 if (IsValid())
                 {
-                    // insert
-                    
-                    SqlCommand command2;
-                    String sql2 = "Insert into Cinemat values(@title, @discount, @seat)";
-                    command2 = new SqlCommand(sql2, cnn);
+                    SqlCommand command2 = new SqlCommand("Insert into Cinemat values(@title, @discount, @seat)", cnn);
                     command2.CommandType = CommandType.Text;
                     command2.Parameters.AddWithValue("@title", title_txt.Text);
                     command2.Parameters.AddWithValue("@discount", discount_txt.Text);
@@ -77,8 +61,7 @@ namespace AlicjaDobrowolska
                     command2.ExecuteNonQuery();
                     cnn.Close();
                     pokaz();
-                    //adapter.InsertCommand = new SqlCommand(sql2, cnn);
-                    //adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("Dodano", "Saved",MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (SqlException ex)
@@ -110,13 +93,26 @@ namespace AlicjaDobrowolska
             SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
             
 
-            SqlCommand command = new SqlCommand("select @title, @discount, @seat from Cinemat", cnn);
+            SqlCommand command = new SqlCommand("select * from Cinemat", cnn);
             DataTable db = new DataTable();
             cnn.Open();
             SqlDataReader reader = command.ExecuteReader();
             db.Load(reader);
             cnn.Close();
             dataGridMovies.ItemsSource = db.DefaultView;
+            //dataGridMovies.ItemsSource = listOfMovies;
+            //if (File.Exists("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml"))
+            //{
+            //    listOfMovies = Serializacja.DeserializeToObject<List<Movies>>("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
+            //}
+            //else
+            //{
+            //    listOfMovies.Add(new Movies("Title", "Discount", "1"));
+            //    listOfMovies.Add(new Movies("Title", "Discount", "2"));
+            //    listOfMovies.Add(new Movies("Title", "Discount", "3"));
+            //    listOfMovies.Add(new Movies("Title", "Discount", "4"));
+            //}
+            //dataGridMovies.ItemsSource = listOfMovies;
         }
 
         private void Button_Connect(object sender, RoutedEventArgs e)
@@ -161,7 +157,44 @@ namespace AlicjaDobrowolska
 
         private void Button_Usun(object sender, RoutedEventArgs e)
         {
+            cnn.Open();
+            SqlCommand command = new SqlCommand("delete from cinemat where Id = " + search_txt.Text + " ", cnn);
+            try
+            {
+                command.ExecuteNonQuery();
+                MessageBox.Show("Usunięto", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                cnn.Close();
+                pokaz();
+                cnn.Close();
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Nie usunięto" + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+        }
 
+        private void Button_update(object sender, RoutedEventArgs e)
+        {
+            cnn.Open();
+            SqlCommand command = new SqlCommand("update Cinemat set title = '" + title_txt.Text + "', discount = '"+discount_txt.Text+"', seat = '"+seat_txt.Text+"' WHERE Id = '"+search_txt.Text+"' ", cnn);
+            try
+            {
+                command.ExecuteNonQuery();
+                MessageBox.Show("Edytowano", "Updated", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Nie edytowano" + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+                pokaz();
+            }
         }
     }
 }
