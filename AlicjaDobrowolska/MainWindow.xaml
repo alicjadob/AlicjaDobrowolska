@@ -10,6 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -18,11 +20,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.ColumnSpan="2" Background="CornflowerBlue"/>
-        <TextBlock Text="ZAMÓW BILETY" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="AliceBlue"/>
-        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" FontSize="20">
-        </DataGrid>
-        <Button Click="Button_Dodaj" Grid.Column="0" Grid.Row="4" Content="Dodaj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
-        <Button Grid.Column="1" Grid.Row="4" Click="Button_Wlasciwosci" Content="Edytuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
+        <TextBlock Grid.ColumnSpan="3" Background="CornflowerBlue"/>
+        <TextBlock Text="ZAMÓW BILETY" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="AliceBlue"/>
+        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" FontSize="20"/>
+        <Button Click="Button_Dodaj" Grid.Column="0" Grid.Row="4" Content="Dodaj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
+        <Button Grid.Column="1" Grid.Row="4" Click="Button_Wlasciwosci" Content="Edytuj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
+        <Button Grid.Column="2" Grid.Row="4" Click="Button_Connect" Content="Połącz" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
+        <Button Click="Button_Usun" Grid.Column="3" Grid.Row="4" Content="Usuń" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="20"/>
     </Grid>
 </Window>
