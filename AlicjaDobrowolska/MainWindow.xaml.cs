@@ -33,10 +33,7 @@ namespace AlicjaDobrowolska
             pokaz();
         }
         SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Serializacja.SerializeToXml<List<Movies>>(listOfMovies, "C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
-        }
+
         public bool IsValid()
         {
             if (title_txt.Text == string.Empty || discount_txt.Text == string.Empty || seat_txt.Text == string.Empty)
@@ -62,6 +59,11 @@ namespace AlicjaDobrowolska
                     cnn.Close();
                     pokaz();
                     MessageBox.Show("Dodano", "Saved",MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow okno = new MainWindow();
+                    Movies movies = new Movies();
+                    okno.DataContext = movies;
+                        listOfMovies.Add(movies);
+                        dataGridMovies.Items.Refresh();
                 }
             }
             catch (SqlException ex)
@@ -72,19 +74,19 @@ namespace AlicjaDobrowolska
 
         private void Button_Wlasciwosci(object sender, RoutedEventArgs e)
         {
-            if (dataGridMovies.SelectedItem != null)
-            {
-                Window1 okno = new Window1();
-                Movies filmy = new Movies((Movies)dataGridMovies.SelectedItem);
-                okno.DataContext = filmy;
-                okno.ShowDialog();
-                if (okno.IsEditPressed)
-                {
-                    int index = listOfMovies.IndexOf((Movies)dataGridMovies.SelectedItem);
-                    listOfMovies[index] = filmy;
-                    dataGridMovies.Items.Refresh();
-                }
-            }
+            //if (dataGridMovies.SelectedItem != null)
+            //{
+            //   Window1 okno = new Window1();
+            //    Movies filmy = new Movies((Movies)dataGridMovies.SelectedItem);
+            //    okno.DataContext = filmy;
+            //    okno.ShowDialog();
+            //    if (okno.IsEditPressed)
+            //    {
+            //        int index = listOfMovies.IndexOf((Movies)dataGridMovies.SelectedItem);
+            //        listOfMovies[index] = filmy;
+            //        dataGridMovies.Items.Refresh();
+            //    }
+            //}
         }
 
         public void pokaz()
@@ -114,47 +116,6 @@ namespace AlicjaDobrowolska
             //}
             //dataGridMovies.ItemsSource = listOfMovies;
         }
-
-        private void Button_Connect(object sender, RoutedEventArgs e)
-        {
-            
-            //MessageBox.Show("Connection Open!");
-            //cnn.Close();
-            
-            
-            
-
-            
-
-            //command2.Dispose();
-            
-            ////update
-            //SqlCommand command3;
-            //SqlDataAdapter adapter2 = new SqlDataAdapter();
-            //String sql3 = "";
-            //sql3 = "Update Cinemat set title='" + "Obcy" + "' where Id=10";
-            //command3 = new SqlCommand(sql3, cnn);
-            //adapter2.UpdateCommand = new SqlCommand(sql3, cnn);
-            //adapter2.UpdateCommand.ExecuteNonQuery();
-            //command3.Dispose();
-
-            ////deleting
-            //SqlCommand command4;
-            //SqlDataAdapter adapter3 = new SqlDataAdapter();
-            //String sql4 = "Delete Cinemat where Id=10";
-            //command4 = new SqlCommand(sql4, cnn);
-            //adapter3.DeleteCommand = new SqlCommand(sql4, cnn);
-            //adapter3.DeleteCommand.ExecuteNonQuery();
-            //command4.Dispose();
-
-            //cnn.Close();
-        }
-
-        public void usun()
-        {
-
-        }
-
         private void Button_Usun(object sender, RoutedEventArgs e)
         {
             cnn.Open();

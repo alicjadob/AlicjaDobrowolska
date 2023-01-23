@@ -10,11 +10,11 @@ namespace AlicjaDobrowolska
     [XmlRoot(ElementName = "filmy")]
     public class Movies
     {
-        [XmlAttribute("title")]
+        [XmlAttribute("title_txt")]
         public string title { get; set; }
-        [XmlAttribute("discount")]
+        [XmlAttribute("discount_txt")]
         public string discount { get; set; }
-        [XmlAttribute("seat")]
+        [XmlAttribute("seat_txt")]
         public string seat { get; set; }
 
         public Movies()
