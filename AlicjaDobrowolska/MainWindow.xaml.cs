@@ -141,7 +141,7 @@ namespace AlicjaDobrowolska
         private void Button_update(object sender, RoutedEventArgs e)
         {
             cnn.Open();
-            SqlCommand command = new SqlCommand("update Cinemat set title = '" + title_txt.Text + "', discount = '"+discount_txt.Text+"', seat = '"+seat_txt.Text+"' WHERE Id = '"+search_txt.Text+"' ", cnn);
+            SqlCommand command = new SqlCommand("update Cinemat set title = '"+title_txt.Text+"', discount = '"+discount_txt.Text+"', seat = '"+seat_txt.Text+"' WHERE Id = '"+search_txt.Text+"' ", cnn);
             try
             {
                 command.ExecuteNonQuery();
