@@ -157,5 +157,6 @@ namespace AlicjaDobrowolska
                 pokaz();
             }
         }
+
     }
 }
