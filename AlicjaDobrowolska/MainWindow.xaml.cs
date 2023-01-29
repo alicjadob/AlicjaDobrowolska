@@ -49,7 +49,7 @@ namespace AlicjaDobrowolska
             {
                 if (IsValid())
                 {
-                    SqlCommand command2 = new SqlCommand("Insert into Cinemat values(@title, @discount, @seat)", cnn);
+                    SqlCommand command2 = new SqlCommand("Insert into Cinemat values(@name, @surname, @title, @seat)", cnn);
                     command2.CommandType = CommandType.Text;
                     command2.Parameters.AddWithValue("@name", name_txt.Text);
                     command2.Parameters.AddWithValue("@surname", surname_txt.Text);
