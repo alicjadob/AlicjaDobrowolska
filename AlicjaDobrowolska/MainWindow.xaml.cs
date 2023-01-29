@@ -36,7 +36,7 @@ namespace AlicjaDobrowolska
 
         public bool IsValid()
         {
-            if (title_txt.Text == string.Empty || discount_txt.Text == string.Empty || seat_txt.Text == string.Empty)
+            if (name_txt.Text == string.Empty || surname_txt.Text == string.Empty || title_txt.Text == string.Empty || seat_txt.Text == string.Empty)
             {
                 MessageBox.Show("Wypełnij wszystkie dane", "Błąd zamówienia", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -51,42 +51,22 @@ namespace AlicjaDobrowolska
                 {
                     SqlCommand command2 = new SqlCommand("Insert into Cinemat values(@title, @discount, @seat)", cnn);
                     command2.CommandType = CommandType.Text;
+                    command2.Parameters.AddWithValue("@name", name_txt.Text);
+                    command2.Parameters.AddWithValue("@surname", surname_txt.Text);
                     command2.Parameters.AddWithValue("@title", title_txt.Text);
-                    command2.Parameters.AddWithValue("@discount", discount_txt.Text);
                     command2.Parameters.AddWithValue("@seat", seat_txt.Text);
                     cnn.Open();
                     command2.ExecuteNonQuery();
                     cnn.Close();
                     pokaz();
                     MessageBox.Show("Dodano", "Saved",MessageBoxButton.OK, MessageBoxImage.Information);
-                    MainWindow okno = new MainWindow();
-                    Movies movies = new Movies();
-                    okno.DataContext = movies;
-                        listOfMovies.Add(movies);
-                        dataGridMovies.Items.Refresh();
+                    Wyczysc();
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void Button_Wlasciwosci(object sender, RoutedEventArgs e)
-        {
-            //if (dataGridMovies.SelectedItem != null)
-            //{
-            //   Window1 okno = new Window1();
-            //    Movies filmy = new Movies((Movies)dataGridMovies.SelectedItem);
-            //    okno.DataContext = filmy;
-            //    okno.ShowDialog();
-            //    if (okno.IsEditPressed)
-            //    {
-            //        int index = listOfMovies.IndexOf((Movies)dataGridMovies.SelectedItem);
-            //        listOfMovies[index] = filmy;
-            //        dataGridMovies.Items.Refresh();
-            //    }
-            //}
         }
 
         public void pokaz()
@@ -102,19 +82,6 @@ namespace AlicjaDobrowolska
             db.Load(reader);
             cnn.Close();
             dataGridMovies.ItemsSource = db.DefaultView;
-            //dataGridMovies.ItemsSource = listOfMovies;
-            //if (File.Exists("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml"))
-            //{
-            //    listOfMovies = Serializacja.DeserializeToObject<List<Movies>>("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
-            //}
-            //else
-            //{
-            //    listOfMovies.Add(new Movies("Title", "Discount", "1"));
-            //    listOfMovies.Add(new Movies("Title", "Discount", "2"));
-            //    listOfMovies.Add(new Movies("Title", "Discount", "3"));
-            //    listOfMovies.Add(new Movies("Title", "Discount", "4"));
-            //}
-            //dataGridMovies.ItemsSource = listOfMovies;
         }
         private void Button_Usun(object sender, RoutedEventArgs e)
         {
@@ -141,7 +108,7 @@ namespace AlicjaDobrowolska
         private void Button_update(object sender, RoutedEventArgs e)
         {
             cnn.Open();
-            SqlCommand command = new SqlCommand("update Cinemat set title = '"+title_txt.Text+"', discount = '"+discount_txt.Text+"', seat = '"+seat_txt.Text+"' WHERE Id = '"+search_txt.Text+"' ", cnn);
+            SqlCommand command = new SqlCommand("update Cinemat set name = '"+name_txt.Text+"', surname = '"+surname_txt.Text+"', title = '"+title_txt.Text+"', seat = '"+seat_txt.Text+"' WHERE Id = '"+search_txt.Text+"' ", cnn);
             try
             {
                 command.ExecuteNonQuery();
@@ -154,9 +121,20 @@ namespace AlicjaDobrowolska
             finally
             {
                 cnn.Close();
+                Wyczysc();
                 pokaz();
             }
         }
-
+        public void Wyczysc()
+        {
+            name_txt.Clear();
+            surname_txt.Clear();
+            title_txt.Clear();
+            seat_txt.Clear();
+        }
+        private void Button_Wyczysc(object sender, RoutedEventArgs e)
+        {
+            Wyczysc();
+        }
     }
 }

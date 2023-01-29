@@ -12,7 +12,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,21 +20,31 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.ColumnSpan="6" Background="#B676B1"/>
-        <TextBlock Text="ZAMÓW BILETY" Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="AliceBlue"/>
-        <TextBlock Grid.Row="1" Background="#d9b9bc" Grid.ColumnSpan="2" />
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="2"  Background="#d9b9bc"/>
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2"  Background="#d9b9bc"/>
-        <TextBlock Text="TYTUŁ:" Grid.Row="1" Grid.ColumnSpan="2"  Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="ZNIŻKA:" Grid.Row="2" Grid.ColumnSpan="2"  Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="MIEJSCE:" Grid.Row="3" Grid.ColumnSpan="2"  Foreground="AliceBlue" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox x:Name="title_txt" Grid.Row="1" Grid.Column="2" Background="AliceBlue" Foreground="Black" Text="{Binding title, Mode=TwoWay}"></TextBox>
-        <TextBox x:Name="discount_txt" Grid.Column="2" Grid.Row="2" Background="AliceBlue" Foreground="Black" Text="{Binding discount, Mode=TwoWay}"></TextBox>
-        <TextBox x:Name="seat_txt" Grid.Column="2" Grid.Row="3" Background="AliceBlue" Foreground="Black" Text="{Binding seat, Mode=TwoWay}"></TextBox>
-        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" Grid.RowSpan="4" Grid.ColumnSpan="2" FontSize="20"/>
-        <Button Click="Button_Dodaj" Grid.Column="0" Grid.Row="5" Content="Dodaj" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
-        <Button Grid.Column="1" Grid.Row="5" Click="Button_update" Content="Aktualizuj" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
-        <Button Click="Button_Usun" Grid.Column="2" Grid.Row="5" Content="Usuń" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
+        <TextBlock Grid.ColumnSpan="4" Background="#B676B1"/>
+        <TextBlock Text="ZAMÓW BILETY" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="AliceBlue"/>
+        <TextBlock Grid.Row="1" Background="#d9b9bc"/>
+        <TextBlock Grid.Row="2" Background="#d9b9bc"/>
+        <TextBlock Grid.Row="3" Background="#d9b9bc"/>
+        <TextBlock Grid.Row="4" Background="#d9b9bc"/>
+        <TextBlock Grid.Row="5" Background="#d9b9bc"/>
+
+        <TextBlock Text="IMIĘ:" Grid.Row="1" Foreground="AliceBlue" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="NAZWISKO:" Grid.Row="2" Foreground="AliceBlue" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="TYTUŁ:" Grid.Row="3" Foreground="AliceBlue" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="MIEJSCE:" Grid.Row="4" Foreground="AliceBlue" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="ID:" Grid.Row="5" Foreground="AliceBlue" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="name_txt" Grid.Column="1" Grid.Row="1" Background="AliceBlue" Foreground="Black" Text="{Binding discount, Mode=TwoWay}"></TextBox>
+        <TextBox x:Name="surname_txt" Grid.Column="1" Grid.Row="2" Background="AliceBlue" Foreground="Black" Text="{Binding discount, Mode=TwoWay}"></TextBox>
+        <TextBox x:Name="title_txt" Grid.Row="3" Grid.Column="1" Background="AliceBlue" Foreground="Black" Text="{Binding title, Mode=TwoWay}"></TextBox>
+        <TextBox x:Name="seat_txt" Grid.Column="1" Grid.Row="4" Background="AliceBlue" Foreground="Black" Text="{Binding seat, Mode=TwoWay}"></TextBox>
+        <TextBox x:Name="search_txt" Grid.Column="1" Grid.Row="5" Background="AliceBlue" Foreground="Black" Text="{Binding seat, Mode=TwoWay}"></TextBox>
+        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="2" FontSize="20"/>
+        <Button Click="Button_Dodaj" Grid.Column="0" Grid.Row="6" Content="Dodaj" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
+        <Button Grid.Column="1" Grid.Row="6" Click="Button_update" Content="Aktualizuj" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
+        <Button Click="Button_Usun" Grid.Column="2" Grid.Row="6" Content="Usuń" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
+        <Button Click="Button_Wyczysc" Grid.Column="3" Grid.Row="6" Content="Wyczyść" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
+
     </Grid>
 </Window>
