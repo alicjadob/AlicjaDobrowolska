@@ -58,10 +58,10 @@
             </ListBox.ItemsPanel>
             <ListBoxItem Background="Black" Foreground="AliceBlue" Width="40" Height="40"/>
             <ListBoxItem Background="AliceBlue" Foreground="Black" Width="40" Height="40"/>
-            <ListBoxItem Background="#d9b9bc" Foreground="Black" Width="40" Height="40"/>
-            <ListBoxItem Background="#82CAAF" Foreground="Black" Width="40" Height="40"/>
-            <ListBoxItem Background="#82AFCA" Foreground="Black" Width="40" Height="40"/>
-            <ListBoxItem Background="#FECF6A" Foreground="Black" Width="40" Height="40"/>
+            <ListBoxItem Background="#d9b9bc" Foreground="AliceBlue" Width="40" Height="40"/>
+            <ListBoxItem Background="#82CAAF" Foreground="AliceBlue" Width="40" Height="40"/>
+            <ListBoxItem Background="#82AFCA" Foreground="AliceBlue" Width="40" Height="40"/>
+            <ListBoxItem Background="#FECF6A" Foreground="AliceBlue" Width="40" Height="40"/>
         </ListBox>
     </Grid>
 </Window>
