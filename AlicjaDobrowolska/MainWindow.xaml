@@ -46,7 +46,7 @@
        
                  Background="{Binding ElementName=listakolorow, Path=SelectedItem.Background, Mode=TwoWay}"/>
         <DataGrid x:Name="dataGridMovies" AutoGenerateColumns="False" Margin="10,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" 
-        Grid.ColumnSpan="2" FontSize="15">
+        Grid.ColumnSpan="2" FontSize="15" SelectionChanged="dataGridMovies_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="40"/>
                 <DataGridTextColumn Binding="{Binding name}" Header="Imię" Width="80"/>

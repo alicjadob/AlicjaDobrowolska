@@ -44,6 +44,7 @@ namespace AlicjaDobrowolska
             }
             return true;
         }
+
         private void Button_Dodaj(object sender, RoutedEventArgs e)
         {
             try
@@ -81,19 +82,8 @@ namespace AlicjaDobrowolska
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridMovies.ItemsSource = dt.DefaultView;
-            
-            ////wyswietlanie
-            //SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
-
-
-            //SqlCommand command = new SqlCommand("select * from Cinemat", cnn);
-            //DataTable db = new DataTable();
-            //cnn.Open();
-            //SqlDataReader reader = command.ExecuteReader();
-            //db.Load(reader);
-            //cnn.Close();
-            //dataGridMovies.ItemsSource = db.DefaultView;
         }
+
         private void Button_Usun(object sender, RoutedEventArgs e)
         {
             cnn.Open();
@@ -136,8 +126,10 @@ namespace AlicjaDobrowolska
                 pokaz();
             }
         }
+
         public void Wyczysc()
         {
+            search_txt.Clear();
             name_txt.Clear();
             surname_txt.Clear();
             title_txt.Clear();
@@ -146,6 +138,20 @@ namespace AlicjaDobrowolska
         private void Button_Wyczysc(object sender, RoutedEventArgs e)
         {
             Wyczysc();
+        }
+
+        private void dataGridMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid gd = (DataGrid)sender;
+            DataRowView row_selected = gd.SelectedItem as DataRowView;
+            if(row_selected != null)
+            {
+                search_txt.Text = row_selected["Id"].ToString();
+                name_txt.Text = row_selected["name"].ToString();
+                surname_txt.Text = row_selected["surname"].ToString();
+                title_txt.Text = row_selected["title"].ToString();
+                seat_txt.Text = row_selected["seat"].ToString();
+            }
         }
     }
 }
