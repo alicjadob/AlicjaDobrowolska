@@ -43,9 +43,19 @@
         <TextBox x:Name="seat_txt" Grid.Column="1" Grid.Row="4" FontSize="20" Foreground="{Binding ElementName=listakolorow, Path=SelectedItem.Foreground, Mode=TwoWay}" 
         Background="{Binding ElementName=listakolorow, Path=SelectedItem.Background, Mode=TwoWay}"/>
         <TextBox x:Name="search_txt" Grid.Column="1" Grid.Row="5" FontSize="20" Foreground="{Binding ElementName=listakolorow, Path=SelectedItem.Foreground, Mode=TwoWay}" 
-        Background="{Binding ElementName=listakolorow, Path=SelectedItem.Background, Mode=TwoWay}"/>
-        <DataGrid x:Name="dataGridMovies" Margin="-8,0,8,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" 
-        Grid.ColumnSpan="2" FontSize="15"/>
+       
+                 Background="{Binding ElementName=listakolorow, Path=SelectedItem.Background, Mode=TwoWay}"/>
+        <DataGrid x:Name="dataGridMovies" AutoGenerateColumns="False" Margin="10,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" 
+        Grid.ColumnSpan="2" FontSize="15">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="40"/>
+                <DataGridTextColumn Binding="{Binding name}" Header="Imię" Width="80"/>
+                <DataGridTextColumn Binding="{Binding surname}" Header="Nazwisko" Width="100"/>
+                <DataGridTextColumn Binding="{Binding title}" Header="Tytuł" Width="150"/>
+                <DataGridTextColumn Binding="{Binding seat}" Header="Miejsce" Width="60"/>
+            </DataGrid.Columns>
+        </DataGrid>
+       
         <Button Click="Button_Dodaj" Grid.Column="0" Grid.Row="6" Content="Dodaj" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
         <Button Grid.Column="1" Grid.Row="6" Click="Button_update" Content="Aktualizuj" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>
         <Button Click="Button_Usun" Grid.Column="2" Grid.Row="6" Content="Usuń" Background="#A55969" Foreground="AliceBlue" FontSize="20"/>

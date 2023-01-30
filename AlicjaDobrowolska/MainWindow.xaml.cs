@@ -18,6 +18,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
+using System.Configuration;
 
 namespace AlicjaDobrowolska
 {
@@ -71,17 +72,27 @@ namespace AlicjaDobrowolska
 
         public void pokaz()
         {
-            //wyswietlanie
             SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
-            
-
-            SqlCommand command = new SqlCommand("select * from Cinemat", cnn);
-            DataTable db = new DataTable();
             cnn.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            db.Load(reader);
-            cnn.Close();
-            dataGridMovies.ItemsSource = db.DefaultView;
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Select * from [Cinemat]";
+            command.Connection = cnn;
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridMovies.ItemsSource = dt.DefaultView;
+            
+            ////wyswietlanie
+            //SqlConnection cnn = new SqlConnection(@"Data Source=ALICJA\SQLEXPRESS;Initial Catalog=Cinema;Integrated Security=true ");
+
+
+            //SqlCommand command = new SqlCommand("select * from Cinemat", cnn);
+            //DataTable db = new DataTable();
+            //cnn.Open();
+            //SqlDataReader reader = command.ExecuteReader();
+            //db.Load(reader);
+            //cnn.Close();
+            //dataGridMovies.ItemsSource = db.DefaultView;
         }
         private void Button_Usun(object sender, RoutedEventArgs e)
         {
