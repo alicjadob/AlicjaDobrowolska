@@ -1,24 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Security.Cryptography.X509Certificates;
-using System.Configuration;
 
 namespace AlicjaDobrowolska
 {
@@ -27,7 +10,6 @@ namespace AlicjaDobrowolska
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Movies> listOfMovies = new List<Movies>();
         public MainWindow()
         {
             InitializeComponent();
@@ -135,6 +117,7 @@ namespace AlicjaDobrowolska
             title_txt.Clear();
             seat_txt.Clear();
         }
+
         private void Button_Wyczysc(object sender, RoutedEventArgs e)
         {
             Wyczysc();
