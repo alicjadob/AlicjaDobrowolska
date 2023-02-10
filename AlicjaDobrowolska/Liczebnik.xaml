@@ -1,11 +1,11 @@
-﻿<Window x:Class="AlicjaDobrowolska.kalkulator"
+﻿<Window x:Class="AlicjaDobrowolska.Liczebnik"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlicjaDobrowolska"
         mc:Ignorable="d"
-        Title="MainWi " Height="385" Width="310" FontSize="25" Background="purple" MinHeight="385" MinWidth="310" MaxHeight="770" MaxWidth="1000">
+        Title="Liczebnik" Height="385" Width="310" FontSize="25" Background="purple" MinHeight="385" MinWidth="310" MaxHeight="770" MaxWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
