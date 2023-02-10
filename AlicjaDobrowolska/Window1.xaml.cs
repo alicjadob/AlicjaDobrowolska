@@ -60,6 +60,7 @@ namespace AlicjaDobrowolska
                     MessageBox.Show("Dodano", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                     Wyczysc();
                     main.Show();
+                    Close();
                 }
             }
             catch (SqlException ex)
@@ -89,6 +90,7 @@ namespace AlicjaDobrowolska
                 Wyczysc();
                 main.pokaz();
                 main.Show();
+                Close();
             }
         }
         public void Wyczysc()
@@ -119,6 +121,7 @@ namespace AlicjaDobrowolska
                 main.pokaz();
                 main.cnn.Close();
                 main.Show();
+                Close();
             }
             catch (SqlException ex)
             {
