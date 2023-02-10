@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace AlicjaDobrowolska
+{
+    /// <summary>
+    /// Logika interakcji dla klasy fomat.xaml
+    /// </summary>
+    public partial class fomat : Window
+    {
+        List<Movies> listOfMovies = new List<Movies>();
+        public fomat()
+        {
+            InitializeComponent();
+            if (File.Exists("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml"))
+            {
+                listOfMovies = Serializacja.DeserializeToObject<List<Movies>>("C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
+            }
+            else
+            {
+                listOfMovies.Add(new Movies("Title", "Type"));
+                listOfMovies.Add(new Movies("Title", "Type"));
+                listOfMovies.Add(new Movies("Title", "Type"));
+                listOfMovies.Add(new Movies("Title", "Type"));
+            }
+            dataGridMovies.ItemsSource = listOfMovies;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Serializacja.SerializeToXml<List<Movies>>(listOfMovies, "C:\\Users\\laten\\OneDrive\\Pulpit\\test.xml");
+        }
+
+        private void Button_Add(object sender, RoutedEventArgs e)
+        {
+            Window1 okno = new Window1();
+            Movies filmy = new Movies();
+            okno.DataContext = filmy;
+            okno.ShowDialog();
+            if (okno.IsEditPressed)
+            {
+                listOfMovies.Add(filmy);
+                dataGridMovies.Items.Refresh();
+            }
+        }
+
+        private void Button_Properties(object sender, RoutedEventArgs e)
+        {
+            if (dataGridMovies.SelectedItem != null)
+            {
+                Window1 okno = new Window1();
+                Movies filmy = new Movies((Movies)dataGridMovies.SelectedItem);
+                okno.DataContext = filmy;
+                okno.ShowDialog();
+                if (okno.IsEditPressed)
+                {
+                    int index = listOfMovies.IndexOf((Movies)dataGridMovies.SelectedItem);
+                    listOfMovies[index] = filmy;
+                    dataGridMovies.Items.Refresh();
+                }
+            }
+        }
+    }
+}
