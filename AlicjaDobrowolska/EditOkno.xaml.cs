@@ -18,11 +18,11 @@ using Microsoft.VisualBasic;
 namespace AlicjaDobrowolska
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window1.xaml
+    /// Logika interakcji dla klasy EditOkno.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class EditOkno : Window
     {
-        public Window1()
+        public EditOkno()
         {
             InitializeComponent();
         }

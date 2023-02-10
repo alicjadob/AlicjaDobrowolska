@@ -19,7 +19,7 @@ namespace AlicjaDobrowolska
 
         private void Button_Dodaj(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1();
+            EditOkno window1 = new EditOkno();
             window1.Show();
             Close();
         }
@@ -39,14 +39,14 @@ namespace AlicjaDobrowolska
 
         private void Button_update(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1();
+            EditOkno window1 = new EditOkno();
             window1.Show();
             Close();
         }
 
         private void dataGridMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Window1 window1 = new Window1();
+            EditOkno window1 = new EditOkno();
             DataGrid gd = (DataGrid)sender;
             DataRowView row_selected = gd.SelectedItem as DataRowView;
             if(row_selected != null)
