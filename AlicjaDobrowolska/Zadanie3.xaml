@@ -1,0 +1,22 @@
+﻿<Window x:Class="AlicjaDobrowolska.Zadanie3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlicjaDobrowolska"
+        mc:Ignorable="d"
+        Title="Zadanie3" Height="400" Width="400">
+    <Grid>
+        <DockPanel>
+            <Button DockPanel.Dock="Bottom" FontSize="20" Content="Bottom"/>
+            <Button DockPanel.Dock="Left" FontSize="20" Content="Left"/>
+            <Button DockPanel.Dock="Right" FontSize="20" Content="Right"/>
+            <Button DockPanel.Dock="Top" Background="red" FontSize="20" Height="70" Content="Top"/>
+            <Button DockPanel.Dock="Top" Background="green" FontSize="20" Height="150" Width="150" Content="Top2"/>
+            <Button DockPanel.Dock="Right" FontSize="20" Height="90" Content="Right2"/>
+            <Button DockPanel.Dock="Right" FontSize="20" Height="90" Content="Right3"/>
+            <Button DockPanel.Dock="Top" Background="blue" FontSize="20" Height="50" Width="190" Content="Top3"/>
+            <Button FontSize="20" Content="Fill"/>
+        </DockPanel>
+    </Grid>
+</Window>
