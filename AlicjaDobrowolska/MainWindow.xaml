@@ -5,19 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlicjaDobrowolska"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600" Closing="Window_Closing">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <DataGrid x:Name="dataGridMovies" Margin="-4,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.RowSpan="2">
-        </DataGrid>
-        <Button Click="Button_Add" Grid.Column="1" Content="Dodaj" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
-        <Button Grid.Column="1" Grid.Row="1" Click="Button_Properties" Content="Właściwości" Background="DarkOliveGreen" Foreground="AliceBlue" FontSize="40"/>
-    </Grid>
+        Title="MainWindow" Height="400" Width="600">
 </Window>
